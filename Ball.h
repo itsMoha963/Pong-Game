@@ -6,6 +6,8 @@ class Ball{
         float x, y;
         int speedX, speedY;
         int radius;
+        Ball(int screenWidth, int screenHeight);
+
         void Draw();
         void Update();
 };

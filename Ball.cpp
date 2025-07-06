@@ -3,6 +3,13 @@
 #include <raylib.h>
 using namespace std;
 
+Ball::Ball(int screenWidth, int screenHeight) {
+    radius = 20; // Set the radius of the ball
+    x = screenWidth / 2;
+    y = screenHeight / 2;
+    speedX = 7;
+    speedY = 7;
+}
 void Ball::Draw() {
     DrawCircle(x, y, radius, WHITE);
 }
