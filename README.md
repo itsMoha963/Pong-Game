@@ -3,4 +3,4 @@
 learning how to work with raylib i c++
 
 
-![Game View](gameView.jpeg)
+![GameView](https://github.com/user-attachments/assets/21359428-e1fb-4340-99b3-b7449fd9416f)
