@@ -8,7 +8,7 @@ public:
     float x, y;
     float width, height;
     int speed;
-    Paddle(int screenWidth, int screenHeight);
+    Paddle(float xPos, float yPos);
     void Draw();
     void Update();
 };

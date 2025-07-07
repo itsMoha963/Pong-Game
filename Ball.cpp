@@ -2,16 +2,19 @@
 #include "Ball.h"
 #include <raylib.h>
 using namespace std;
-
-Ball::Ball(int screenWidth, int screenHeight) {
+Color yellow = Color{243,213,91,155};
+Color DarkYellow = Color{189, 183, 107, 255};
+Color coral = Color{255, 127, 80, 255};
+Ball::Ball(int screenWidth, int screenHeight)
+{
     radius = 20; // Set the radius of the ball
     x = screenWidth / 2;
     y = screenHeight / 2;
-    speedX = 7;
-    speedY = 7;
+    speedX = 8;
+    speedY = 8;
 }
 void Ball::Draw() {
-    DrawCircle(x, y, radius, WHITE);
+    DrawCircle(x, y, radius, coral);
 }
 
 void Ball::Update() {
@@ -24,4 +27,13 @@ void Ball::Update() {
     if (x + radius >= GetScreenWidth() || x - radius <= 0) {
         speedX *= -1; // Reverse the speed when hitting the left or right side of the screen
     }
+
+}
+void Ball::ResetBall() {
+    x = GetScreenWidth() / 2; // Reset ball position to the center of the screen
+    y = GetScreenHeight() / 2;
+    int speedchoices[2] = {-1, 1};
+   // Randomly choose direction for speedX
+   speedX *= speedchoices[GetRandomValue(0,1)];
+   speedY *= speedchoices[GetRandomValue(0, 1)];
 }

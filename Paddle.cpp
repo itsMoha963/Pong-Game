@@ -3,17 +3,17 @@
 #include <raylib.h>
 
 using namespace std;
-Paddle::Paddle(int screenWidth, int screenHeight) {
+Paddle::Paddle(float xPos, float yPos) {
     width = 25;
     height = 120;
-    speed = 10; // Set the speed of the paddle
-    x = screenWidth - this->width -10; // Initial x position
-    y = screenHeight / 2 - this->height /2; // Center the paddle vertically
+    x = xPos;   // screenWidth - this->width -10; // Initial x position
+    y = yPos;   // screenHeight / 2 - this->height /2; // Center the paddle vertically
     speed = 6;
 }
 
 void Paddle::Draw() {
-    DrawRectangle(x, y, width, height, WHITE);
+   // DrawRectangle(x, y, width, height, WHITE);
+    DrawRectangleRounded(Rectangle{ x, y, width, height }, 0.8f, 0, Color{112, 128, 144, 255}); // Draw rounded rectangle for paddle
 }
 
 void Paddle::LimitMovement() {

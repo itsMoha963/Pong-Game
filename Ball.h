@@ -10,5 +10,6 @@ class Ball{
 
         void Draw();
         void Update();
+        void ResetBall();
 };
 #endif
